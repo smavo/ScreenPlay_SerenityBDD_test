@@ -6,9 +6,12 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features = "src/test/resources/Features/EjemploGlobal.feature",
+@CucumberOptions(
+        features = "src/test/resources/Features/EjemploGlobal.feature",
         glue = "StepDefinitions",
-        tags ="", snippets = SnippetType.CAMELCASE)
+        tags ="@EscenarioSinEjemplos",
+        snippets = SnippetType.CAMELCASE)
+
 public class EjemploGlobalRunner {
 
 }

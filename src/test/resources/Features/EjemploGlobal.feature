@@ -5,11 +5,13 @@
   Quiero ingresar a la pagina www.abc.com
   Para realizar una compra de un articulo
 
+  @EscenarioSinEjemplos
   Escenario: Agregar artículos al carrito de compras
     Dado que un nuevo cliente accede hasta la web de compras
     Cuando el agrega un producto al carro
     Entonces el ve los productos listado en el carro de compras
 
+  @EscenarioConEjemplos
   Esquema del escenario: Agregar artículos al carrito de compras
     Dado que un nuevo cliente accede hasta la web de compras
     Cuando el agrega productos al carro
