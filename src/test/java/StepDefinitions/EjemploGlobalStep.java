@@ -1,16 +1,15 @@
 package StepDefinitions;
 
 import UserInterfaces.HomePage;
-import cucumber.api.java.es.Dado;
-import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Entonces;
+import cucumber.api.java.es.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
-import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import Tasks.BuscarProducto;
+import Tasks.AgregarProducto;
 
 import java.util.List;
 
@@ -29,8 +28,10 @@ public class EjemploGlobalStep {
         actor.wasAbleTo(Open.browserOn(homePage));
     }
 
-    @Cuando("^el agrega un producto al carro$")
-    public void elAgregaUnProductoAlCarro() {
+    @Cuando("^el agrega (.*) unidades de (.*) de (.*) al carro$")
+    public void elAgregaUnProductoAlCarro(String cantidad, String descripcion, String tipoCategoria) {
+        actor.wasAbleTo(BuscarProducto.conDescripcion(descripcion, tipoCategoria),
+                AgregarProducto.cantidad(cantidad));
 
     }
 
