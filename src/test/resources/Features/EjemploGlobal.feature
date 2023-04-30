@@ -8,7 +8,7 @@
   @EscenarioSinEjemplos
   Escenario: Agregar artículos al carrito de compras
     Dado que un nuevo cliente accede hasta la web de compras
-    Cuando el agrega 3 unidades de Mascara de respirador N95 de Belleza y Salud al carro
+    Cuando el agrega 3 unidades de Mascara de respirador N95 al carro
     Entonces el ve los productos listado en el carro de compras
 
   @EscenarioConEjemplos

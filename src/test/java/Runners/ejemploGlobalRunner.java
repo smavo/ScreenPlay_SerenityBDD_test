@@ -12,6 +12,6 @@ import org.junit.runner.RunWith;
         tags ="@EscenarioSinEjemplos",
         snippets = SnippetType.CAMELCASE)
 
-public class EjemploGlobalRunner {
+public class ejemploGlobalRunner {
 
 }

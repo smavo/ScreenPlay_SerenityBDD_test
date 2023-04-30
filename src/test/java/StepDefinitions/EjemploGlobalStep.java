@@ -24,15 +24,15 @@ public class EjemploGlobalStep {
     public void queUnNuevoClienteAccedeHastaLaWebDeCompras() {
         WebDriverManager.chromedriver().setup();
         WebDriver navegador = new ChromeDriver();
+        navegador.manage().window().maximize();
         actor.can(BrowseTheWeb.with(navegador));
         actor.wasAbleTo(Open.browserOn(homePage));
     }
 
-    @Cuando("^el agrega (.*) unidades de (.*) de (.*) al carro$")
-    public void elAgregaUnProductoAlCarro(String cantidad, String descripcion, String tipoCategoria) {
-        actor.wasAbleTo(BuscarProducto.conDescripcion(descripcion, tipoCategoria),
+    @Cuando("^el agrega (.*) unidades de (.*) al carro$")
+    public void elAgregaUnProductoAlCarro(String cantidad, String descripcion) {
+        actor.wasAbleTo(BuscarProducto.conDescripcion(descripcion),
                 AgregarProducto.cantidad(cantidad));
-
     }
 
     @Entonces("^el ve los productos listado en el carro de compras$")

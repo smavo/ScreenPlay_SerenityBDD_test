@@ -9,29 +9,28 @@ import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import org.openqa.selenium.Keys;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static UserInterfaces.HomePage.*;
 
 public class BuscarProducto implements Task {
 
     private String descripcion;
-    private String tipoCategoria;
-    public BuscarProducto(String descripcion, String tipoCategoria){
+
+    public BuscarProducto(String descripcion){
 
         this.descripcion = descripcion;
-        this.tipoCategoria = tipoCategoria;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor){
         actor.attemptsTo(
-                Enter.theValue(descripcion).into(),
-                SelectFromOptions.byVisibleText(tipoCategoria).from(),
-                Hit.the(Keys.ENTER).into(),
-                Click.on()
+                Enter.theValue(descripcion).into(INPUT_BUSCAR_ARTICULO),
+                Hit.the(Keys.ENTER).into(INPUT_BUSCAR_ARTICULO),
+                Click.on(LINK_ARTICULO_ENCONTRADO)
         );
     }
 
-    public static BuscarProducto conDescripcion(String descripcion, String tipoCategoria) {
-        return instrumented(BuscarProducto.class, descripcion, tipoCategoria);
+    public static BuscarProducto conDescripcion(String descripcion) {
+        return instrumented(BuscarProducto.class, descripcion);
     }
 
 
