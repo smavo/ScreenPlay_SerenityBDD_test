@@ -2,10 +2,7 @@ package Tasks;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Hit;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.actions.*;
 import org.openqa.selenium.Keys;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -32,6 +29,5 @@ public class BuscarProducto implements Task {
     public static BuscarProducto conDescripcion(String descripcion) {
         return instrumented(BuscarProducto.class, descripcion);
     }
-
 
 }

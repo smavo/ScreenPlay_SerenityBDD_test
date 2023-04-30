@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static UserInterfaces.DetalleArticulo.*;
 
 public class AgregarProducto implements Task {
 
@@ -16,10 +17,8 @@ public class AgregarProducto implements Task {
 
     public <T extends Actor> void performAs(T actor){
         actor.attemptsTo(
-                Click.on(),
-                Enter.theValue(cantidad).into(),
-                Click.on(),
-                Click.on()
+                Click.on(BUTTON_ANADIR_CESTA),
+                Click.on(BUTTON_VER_CESTA)
         );
     }
 
